@@ -19,7 +19,8 @@ defmodule GothamWeb.WorkingTimeJSON do
     %{
       id: working_time.id,
       start: working_time.start,
-      end: working_time.end
+      end: working_time.end,
+      user_id: working_time.user_id
     }
   end
 end
