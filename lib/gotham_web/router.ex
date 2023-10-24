@@ -26,6 +26,8 @@ defmodule GothamWeb.Router do
 
      resources "/users", UserController, except: [:new, :edit]
      resources "/clocks", ClockController, except: [:new, :edit]
+     resources "/working_times", WorkingTimeController, except: [:new, :edit]
+
 
   end
 

@@ -197,4 +197,98 @@ defmodule Gotham.Gestion do
   def change_clock(%Clock{} = clock, attrs \\ %{}) do
     Clock.changeset(clock, attrs)
   end
+
+  alias Gotham.Gestion.WorkingTime
+
+  @doc """
+  Returns the list of working_times.
+
+  ## Examples
+
+      iex> list_working_times()
+      [%WorkingTime{}, ...]
+
+  """
+  def list_working_times do
+    Repo.all(WorkingTime)
+  end
+
+  @doc """
+  Gets a single working_time.
+
+  Raises if the Working time does not exist.
+
+  ## Examples
+
+      iex> get_working_time!(123)
+      %WorkingTime{}
+
+  """
+  def get_working_time!(id), do: Repo.get!(WorkingTime, id)
+
+  @doc """
+  Creates a working_time.
+
+  ## Examples
+
+      iex> create_working_time(%{field: value})
+      {:ok, %WorkingTime{}}
+
+      iex> create_working_time(%{field: bad_value})
+      {:error, ...}
+
+  """
+  def create_working_time(attrs \\ %{}) do
+    %WorkingTime{}
+    |> WorkingTime.changeset(attrs)
+    |> Repo.insert()  end
+
+  @doc """
+  Updates a working_time.
+
+  ## Examples
+
+      iex> update_working_time(working_time, %{field: new_value})
+      {:ok, %WorkingTime{}}
+
+      iex> update_working_time(working_time, %{field: bad_value})
+      {:error, ...}
+
+  """
+  def update_working_time(%WorkingTime{} = working_time, attrs) do
+    working_time
+    |> WorkingTime.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a WorkingTime.
+
+  ## Examples
+
+      iex> delete_working_time(working_time)
+      {:ok, %WorkingTime{}}
+
+      iex> delete_working_time(working_time)
+      {:error, ...}
+
+  """
+  def delete_working_time(%WorkingTime{} = working_time) do
+    Repo.delete(working_time)
+  end
+
+  @doc """
+  Returns a data structure for tracking working_time changes.
+
+  ## Examples
+
+      iex> change_working_time(working_time)
+      %Todo{...}
+
+  """
+  def change_working_time(%WorkingTime{} = working_time, _attrs \\ %{}) do
+    WorkingTime.changeset(working_time, _attrs)
+  end
+
+
 end
