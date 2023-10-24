@@ -5,7 +5,6 @@ defmodule Gotham.Gestion.Clock do
   schema "clocks" do
     field :status, :boolean, default: false
     field :time, :utc_datetime
-
     belongs_to :user, Gotham.Gestion.User
 
     timestamps(type: :utc_datetime)

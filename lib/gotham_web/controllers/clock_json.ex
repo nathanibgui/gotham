@@ -1,0 +1,26 @@
+defmodule GothamWeb.ClockJSON do
+  alias Gotham.Gestion.Clock
+
+  @doc """
+  Renders a list of clocks.
+  """
+  def index(%{clocks: clocks}) do
+    for(clock <- clocks, do: data(clock))
+  end
+
+  @doc """
+  Renders a single clock.
+  """
+  def show(%{clock: clock}) do
+    data(clock)
+  end
+
+  defp data(%Clock{} = clock) do
+    %{
+      id: clock.id,
+      time: clock.time,
+      status: clock.status,
+      user_id: clock.user_id
+    }
+  end
+end

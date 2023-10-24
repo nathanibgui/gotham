@@ -25,7 +25,9 @@ defmodule GothamWeb.Router do
      pipe_through :api
 
      resources "/users", UserController, except: [:new, :edit]
-   end
+     resources "/clocks", ClockController, except: [:new, :edit]
+
+  end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:gotham, :dev_routes) do
