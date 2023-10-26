@@ -22,6 +22,8 @@ defmodule GothamWeb.ClockController do
 
   def show(conn, %{"id" => id}) do
     clock = Gestion.get_clock!(id)
+
+
     render(conn, :show, clock: clock)
   end
 

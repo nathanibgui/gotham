@@ -3,6 +3,7 @@ defmodule GothamWeb.UserController do
 
   alias Gotham.Gestion
   alias Gotham.Gestion.User
+  alias Plug.Conn
 
   action_fallback GothamWeb.FallbackController
 
